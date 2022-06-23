@@ -1,5 +1,5 @@
 import requests
-import uuid4
+from uuid import uuid4
 from assertpy.assertpy import assert_that
 from config import BASE_URI
 
