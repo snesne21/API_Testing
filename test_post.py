@@ -1,5 +1,6 @@
 import requests
 from uuid import uuid4
+import json
 from assertpy.assertpy import assert_that
 from config import BASE_URI
 
@@ -17,7 +18,7 @@ def create_new_sku():
     # json.dumps() -convert python dict to json string
 
     unique_sku = f'sku {str(uuid4())}'
-    payload = dumps({
+    payload = json.dumps({
         'description': unique_sku,
         'sku': unique_sku
     })
