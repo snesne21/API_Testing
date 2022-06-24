@@ -1,6 +1,6 @@
 import requests
 from uuid import uuid4
-import json
+from json import dumps
 import random
 from assertpy.assertpy import assert_that
 from config import BASE_URI
@@ -18,8 +18,8 @@ def create_new_sku():
     # Ensure a sku with a unique sku text is created everytime the test runs
     # json.dumps() -convert python dict to json string
 
-    unique_sku = f'sku {str(uuid4())}'
-    payload = json.dumps({
+    unique_sku = f"sku {str(uuid4())}"
+    payload = dumps({
         'description': unique_sku,
         'sku': unique_sku,
         'price': random.uniform(2.0, 10.5)
@@ -29,12 +29,14 @@ def create_new_sku():
     # And will send json in the headers
     headers = {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Connection': 'keep-alive',
+        'Accept':'*/*'
     }
 
     # We use requests.post method with keyword params to make the request more readable
     response = requests.post(url=BASE_URI, data=payload, headers=headers)
-    assert_that(response.status_code, description='SKU created successfully').is_equal_to(requests.codes.ok)
+    assert_that(response.status_code, description='SKU not created').is_equal_to(requests.codes.ok)
     return unique_sku
 
 def search_created_sku_in(items, unique_sku):
