@@ -1,5 +1,6 @@
 # API_Testing
 Testing a company's SKU API
+
 Goals:
 
 Test the GET, POST and DELETE methods of the API provided.
