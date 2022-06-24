@@ -3,7 +3,8 @@ import requests
 import json
 from assertpy.assertpy import assert_that
 from config import BASE_URI
-import test_post.py
+import helpers.inventory_helpers import *
+from utils.request import *
 
 
 def test_created_item_can_be_deleted():
