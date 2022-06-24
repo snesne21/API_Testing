@@ -3,7 +3,7 @@ import requests
 import json
 from assertpy.assertpy import assert_that
 from config import BASE_URI
-import helpers.inventory_helpers import *
+from helpers.inventory_helpers import *
 from utils.request import *
 
 
