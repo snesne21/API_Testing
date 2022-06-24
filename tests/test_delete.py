@@ -4,6 +4,7 @@ import json
 from assertpy.assertpy import assert_that
 from config import BASE_URI
 from helpers.inventory_helpers import *
+from tests.test_post import *
 from utils.request import *
 
 
