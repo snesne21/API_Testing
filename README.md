@@ -26,7 +26,9 @@ test cases:
 How to run:
 1. Prerequisites: Need to install python, pip and pytest. Also would need requests library.
 2. On the commandline: 
+
     py -3 -m pytest - will run all tests
+    
     py -3 -m pytest [file_name] would run just the test whose file_name is specified
 
 
